@@ -299,6 +299,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   freezed:
     dependency: "direct dev"
     description:
@@ -339,6 +344,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  go_router:
+    dependency: "direct main"
+    description:
+      name: go_router
+      sha256: "00d1b67d6e9fa443331da229084dd3eb04407f5a2dff22940bd7bba6af5722c3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.1.1"
+  go_router_builder:
+    dependency: "direct dev"
+    description:
+      name: go_router_builder
+      sha256: "3e7e0ca431abd9089ff82113d8c8790ba2114ff8e3690d40c4fd38394374474d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
   graphs:
     dependency: transitive
     description:
@@ -730,4 +751,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.0.3 <4.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=3.3.0"

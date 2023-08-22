@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:takehome/news/view/model/source_view_model.dart';
+import 'package:takehome/routing/routes.dart';
 
 class SourceItem extends StatelessWidget {
   const SourceItem({
@@ -9,7 +10,7 @@ class SourceItem extends StatelessWidget {
   final SourceViewModel model;
 
   void _onCardPressed(BuildContext context) {
-    // Navigator.of(context).push(route);
+    NewsRoute(model.id).go(context);
   }
 
   @override

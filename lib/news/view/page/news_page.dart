@@ -22,6 +22,7 @@ class _NewsPageState extends State<NewsPage> with AutomaticKeepAliveClientMixin<
     super.build(context);
 
     return Scaffold(
+      appBar: AppBar(title: Text('News from ${widget.source}')),
       body: BlocProvider(
         create: (context) => get<NewsBloc>()..init(widget.source),
         child: BlocBuilder<NewsBloc, NewsState>(
