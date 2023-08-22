@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:takehome/news/view/model/news_view_model.dart';
-import 'package:takehome/shared/view/widgets/article_item.dart';
+import 'package:takehome/news/view/model/sources_view_model.dart';
+import 'package:takehome/shared/view/widgets/source_item.dart';
 
-class NewsContent extends StatelessWidget {
-  final NewsViewModel model;
-  const NewsContent({
+class SourcesContent extends StatelessWidget {
+  final SourcesViewModel model;
+  const SourcesContent({
     super.key,
     required this.model,
   });
@@ -17,9 +17,9 @@ class NewsContent extends StatelessWidget {
       itemBuilder: (context, index) {
         // print('NewsContent, itemBuilder, index: $index.');
 
-        return ArticleItem(model: model.articles[index]);
+        return SourceItem(model: model.sources[index]);
       },
-      itemCount: model.articles.length,
+      itemCount: model.sources.length,
     );
   }
 }

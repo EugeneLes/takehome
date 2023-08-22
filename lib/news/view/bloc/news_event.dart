@@ -4,5 +4,5 @@ part of 'news_bloc.dart';
 class NewsEvent with _$NewsEvent {
   const factory NewsEvent.favorite(String articleId) = _NewsFavoriteEvent;
 
-  const factory NewsEvent.load() = _NewsLoadEvent;
+  const factory NewsEvent.load(String source) = _NewsLoadEvent;
 }

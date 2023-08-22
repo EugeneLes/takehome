@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:takehome/favorites/view/page/favorites_page.dart';
-import 'package:takehome/news/view/page/news_page.dart';
+import 'package:takehome/news/view/page/sources_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         physics: const NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: const [
-          NewsPage(),
+          SourcesPage(),
           FavoritesPage(),
         ],
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:takehome/news/view/model/news_article.dart';
+import 'package:takehome/news/view/model/news_article_view_model.dart';
 
 class ArticleItem extends StatelessWidget {
-  final NewsArticle model;
+  final NewsArticleVM model;
   const ArticleItem({super.key, required this.model});
 
   _onFavPressed() {
@@ -11,6 +11,7 @@ class ArticleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print('ArticleItem build, model: $model');
 
     return Card(
       child: Row(

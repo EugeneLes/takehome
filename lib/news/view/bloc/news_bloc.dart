@@ -2,8 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:takehome/news/domain/usecases/load_news.dart';
-import 'package:takehome/news/view/model/news_article.dart';
-import 'package:takehome/news/view/model/news_section.dart';
+import 'package:takehome/news/view/model/news_article_view_model.dart';
 import 'package:takehome/news/view/model/news_view_model.dart';
 
 part 'news_bloc.freezed.dart';
@@ -23,33 +22,27 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     on<_NewsFavoriteEvent>((event, emit) => _markArticle(event, emit));
   }
 
-  init() {
-    add(const NewsEvent.load());
+  init(String source) {
+    add(NewsEvent.load(source));
   }
 
   _loadNews(Emitter emit) {
-    _loadNewsUC.call();
+    _loadNewsUC.call('id1');
     emit(
       NewsState.loaded(
         NewsViewModel([
-          NewsSection('title1', [
-            NewsArticle('article1', 'text1'),
-            NewsArticle('article2', 'text2'),
-            NewsArticle('article3', 'text3'),
-            NewsArticle('article4', 'text4'),
-          ]),
-          NewsSection('title2', [
-            NewsArticle('article1', 'text1'),
-            NewsArticle('article2', 'text2'),
-            NewsArticle('article3', 'text3'),
-            NewsArticle('article4', 'text4'),
-          ]),
-          NewsSection('title3', [
-            NewsArticle('article1', 'text1'),
-            NewsArticle('article2', 'text2'),
-            NewsArticle('article3', 'text3'),
-            NewsArticle('article4', 'text4'),
-          ]),
+          NewsArticleVM('article1', 'text1'),
+          NewsArticleVM('article2', 'text2'),
+          NewsArticleVM('article3', 'text3'),
+          NewsArticleVM('article4', 'text4'),
+          NewsArticleVM('article5', 'text5'),
+          NewsArticleVM('article6', 'text6'),
+          NewsArticleVM('article7', 'text7'),
+          NewsArticleVM('article8', 'text8'),
+          NewsArticleVM('article9', 'text9'),
+          NewsArticleVM('article10', 'text10'),
+          NewsArticleVM('article11', 'text11'),
+          NewsArticleVM('article12', 'text12'),
         ]),
       ),
     );

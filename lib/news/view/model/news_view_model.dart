@@ -1,7 +1,7 @@
-import 'package:takehome/news/view/model/news_section.dart';
+import 'package:takehome/news/view/model/news_article_view_model.dart';
 
 class NewsViewModel {
-  final List<NewsSection> sections;
+  final List<NewsArticleVM> articles;
 
-  NewsViewModel(this.sections);
+  NewsViewModel(this.articles);
 }

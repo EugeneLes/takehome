@@ -1,9 +1,9 @@
-class NewsArticle {
+class NewsArticleVM {
   final String title;
   final String text;
   final bool isFavorite;
 
-  NewsArticle(this.title, this.text, {this.isFavorite = false});
+  NewsArticleVM(this.title, this.text, {this.isFavorite = false});
 
   @override
   String toString() {

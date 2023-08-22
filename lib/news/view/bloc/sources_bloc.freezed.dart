@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'news_bloc.dart';
+part of 'sources_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,57 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$NewsEvent {
+mixin _$SourcesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String articleId) favorite,
-    required TResult Function(String source) load,
+    required TResult Function() load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String articleId)? favorite,
-    TResult? Function(String source)? load,
+    TResult? Function()? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String articleId)? favorite,
-    TResult Function(String source)? load,
+    TResult Function()? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsFavoriteEvent value) favorite,
-    required TResult Function(_NewsLoadEvent value) load,
+    required TResult Function(_SourcesFavoriteEvent value) favorite,
+    required TResult Function(_SourcesLoadEvent value) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsFavoriteEvent value)? favorite,
-    TResult? Function(_NewsLoadEvent value)? load,
+    TResult? Function(_SourcesFavoriteEvent value)? favorite,
+    TResult? Function(_SourcesLoadEvent value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsFavoriteEvent value)? favorite,
-    TResult Function(_NewsLoadEvent value)? load,
+    TResult Function(_SourcesFavoriteEvent value)? favorite,
+    TResult Function(_SourcesLoadEvent value)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NewsEventCopyWith<$Res> {
-  factory $NewsEventCopyWith(NewsEvent value, $Res Function(NewsEvent) then) =
-      _$NewsEventCopyWithImpl<$Res, NewsEvent>;
+abstract class $SourcesEventCopyWith<$Res> {
+  factory $SourcesEventCopyWith(
+          SourcesEvent value, $Res Function(SourcesEvent) then) =
+      _$SourcesEventCopyWithImpl<$Res, SourcesEvent>;
 }
 
 /// @nodoc
-class _$NewsEventCopyWithImpl<$Res, $Val extends NewsEvent>
-    implements $NewsEventCopyWith<$Res> {
-  _$NewsEventCopyWithImpl(this._value, this._then);
+class _$SourcesEventCopyWithImpl<$Res, $Val extends SourcesEvent>
+    implements $SourcesEventCopyWith<$Res> {
+  _$SourcesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -74,20 +75,20 @@ class _$NewsEventCopyWithImpl<$Res, $Val extends NewsEvent>
 }
 
 /// @nodoc
-abstract class _$$_NewsFavoriteEventCopyWith<$Res> {
-  factory _$$_NewsFavoriteEventCopyWith(_$_NewsFavoriteEvent value,
-          $Res Function(_$_NewsFavoriteEvent) then) =
-      __$$_NewsFavoriteEventCopyWithImpl<$Res>;
+abstract class _$$_SourcesFavoriteEventCopyWith<$Res> {
+  factory _$$_SourcesFavoriteEventCopyWith(_$_SourcesFavoriteEvent value,
+          $Res Function(_$_SourcesFavoriteEvent) then) =
+      __$$_SourcesFavoriteEventCopyWithImpl<$Res>;
   @useResult
   $Res call({String articleId});
 }
 
 /// @nodoc
-class __$$_NewsFavoriteEventCopyWithImpl<$Res>
-    extends _$NewsEventCopyWithImpl<$Res, _$_NewsFavoriteEvent>
-    implements _$$_NewsFavoriteEventCopyWith<$Res> {
-  __$$_NewsFavoriteEventCopyWithImpl(
-      _$_NewsFavoriteEvent _value, $Res Function(_$_NewsFavoriteEvent) _then)
+class __$$_SourcesFavoriteEventCopyWithImpl<$Res>
+    extends _$SourcesEventCopyWithImpl<$Res, _$_SourcesFavoriteEvent>
+    implements _$$_SourcesFavoriteEventCopyWith<$Res> {
+  __$$_SourcesFavoriteEventCopyWithImpl(_$_SourcesFavoriteEvent _value,
+      $Res Function(_$_SourcesFavoriteEvent) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +96,7 @@ class __$$_NewsFavoriteEventCopyWithImpl<$Res>
   $Res call({
     Object? articleId = null,
   }) {
-    return _then(_$_NewsFavoriteEvent(
+    return _then(_$_SourcesFavoriteEvent(
       null == articleId
           ? _value.articleId
           : articleId // ignore: cast_nullable_to_non_nullable
@@ -106,22 +107,22 @@ class __$$_NewsFavoriteEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
-  const _$_NewsFavoriteEvent(this.articleId);
+class _$_SourcesFavoriteEvent implements _SourcesFavoriteEvent {
+  const _$_SourcesFavoriteEvent(this.articleId);
 
   @override
   final String articleId;
 
   @override
   String toString() {
-    return 'NewsEvent.favorite(articleId: $articleId)';
+    return 'SourcesEvent.favorite(articleId: $articleId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewsFavoriteEvent &&
+            other is _$_SourcesFavoriteEvent &&
             (identical(other.articleId, articleId) ||
                 other.articleId == articleId));
   }
@@ -132,15 +133,15 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewsFavoriteEventCopyWith<_$_NewsFavoriteEvent> get copyWith =>
-      __$$_NewsFavoriteEventCopyWithImpl<_$_NewsFavoriteEvent>(
+  _$$_SourcesFavoriteEventCopyWith<_$_SourcesFavoriteEvent> get copyWith =>
+      __$$_SourcesFavoriteEventCopyWithImpl<_$_SourcesFavoriteEvent>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String articleId) favorite,
-    required TResult Function(String source) load,
+    required TResult Function() load,
   }) {
     return favorite(articleId);
   }
@@ -149,7 +150,7 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String articleId)? favorite,
-    TResult? Function(String source)? load,
+    TResult? Function()? load,
   }) {
     return favorite?.call(articleId);
   }
@@ -158,7 +159,7 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String articleId)? favorite,
-    TResult Function(String source)? load,
+    TResult Function()? load,
     required TResult orElse(),
   }) {
     if (favorite != null) {
@@ -170,8 +171,8 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsFavoriteEvent value) favorite,
-    required TResult Function(_NewsLoadEvent value) load,
+    required TResult Function(_SourcesFavoriteEvent value) favorite,
+    required TResult Function(_SourcesLoadEvent value) load,
   }) {
     return favorite(this);
   }
@@ -179,8 +180,8 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsFavoriteEvent value)? favorite,
-    TResult? Function(_NewsLoadEvent value)? load,
+    TResult? Function(_SourcesFavoriteEvent value)? favorite,
+    TResult? Function(_SourcesLoadEvent value)? load,
   }) {
     return favorite?.call(this);
   }
@@ -188,8 +189,8 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsFavoriteEvent value)? favorite,
-    TResult Function(_NewsLoadEvent value)? load,
+    TResult Function(_SourcesFavoriteEvent value)? favorite,
+    TResult Function(_SourcesLoadEvent value)? load,
     required TResult orElse(),
   }) {
     if (favorite != null) {
@@ -199,104 +200,78 @@ class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
   }
 }
 
-abstract class _NewsFavoriteEvent implements NewsEvent {
-  const factory _NewsFavoriteEvent(final String articleId) =
-      _$_NewsFavoriteEvent;
+abstract class _SourcesFavoriteEvent implements SourcesEvent {
+  const factory _SourcesFavoriteEvent(final String articleId) =
+      _$_SourcesFavoriteEvent;
 
   String get articleId;
   @JsonKey(ignore: true)
-  _$$_NewsFavoriteEventCopyWith<_$_NewsFavoriteEvent> get copyWith =>
+  _$$_SourcesFavoriteEventCopyWith<_$_SourcesFavoriteEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_NewsLoadEventCopyWith<$Res> {
-  factory _$$_NewsLoadEventCopyWith(
-          _$_NewsLoadEvent value, $Res Function(_$_NewsLoadEvent) then) =
-      __$$_NewsLoadEventCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String source});
+abstract class _$$_SourcesLoadEventCopyWith<$Res> {
+  factory _$$_SourcesLoadEventCopyWith(
+          _$_SourcesLoadEvent value, $Res Function(_$_SourcesLoadEvent) then) =
+      __$$_SourcesLoadEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NewsLoadEventCopyWithImpl<$Res>
-    extends _$NewsEventCopyWithImpl<$Res, _$_NewsLoadEvent>
-    implements _$$_NewsLoadEventCopyWith<$Res> {
-  __$$_NewsLoadEventCopyWithImpl(
-      _$_NewsLoadEvent _value, $Res Function(_$_NewsLoadEvent) _then)
+class __$$_SourcesLoadEventCopyWithImpl<$Res>
+    extends _$SourcesEventCopyWithImpl<$Res, _$_SourcesLoadEvent>
+    implements _$$_SourcesLoadEventCopyWith<$Res> {
+  __$$_SourcesLoadEventCopyWithImpl(
+      _$_SourcesLoadEvent _value, $Res Function(_$_SourcesLoadEvent) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? source = null,
-  }) {
-    return _then(_$_NewsLoadEvent(
-      null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$_NewsLoadEvent implements _NewsLoadEvent {
-  const _$_NewsLoadEvent(this.source);
-
-  @override
-  final String source;
+class _$_SourcesLoadEvent implements _SourcesLoadEvent {
+  const _$_SourcesLoadEvent();
 
   @override
   String toString() {
-    return 'NewsEvent.load(source: $source)';
+    return 'SourcesEvent.load()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_NewsLoadEvent &&
-            (identical(other.source, source) || other.source == source));
+        (other.runtimeType == runtimeType && other is _$_SourcesLoadEvent);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, source);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_NewsLoadEventCopyWith<_$_NewsLoadEvent> get copyWith =>
-      __$$_NewsLoadEventCopyWithImpl<_$_NewsLoadEvent>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String articleId) favorite,
-    required TResult Function(String source) load,
+    required TResult Function() load,
   }) {
-    return load(source);
+    return load();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String articleId)? favorite,
-    TResult? Function(String source)? load,
+    TResult? Function()? load,
   }) {
-    return load?.call(source);
+    return load?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String articleId)? favorite,
-    TResult Function(String source)? load,
+    TResult Function()? load,
     required TResult orElse(),
   }) {
     if (load != null) {
-      return load(source);
+      return load();
     }
     return orElse();
   }
@@ -304,8 +279,8 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsFavoriteEvent value) favorite,
-    required TResult Function(_NewsLoadEvent value) load,
+    required TResult Function(_SourcesFavoriteEvent value) favorite,
+    required TResult Function(_SourcesLoadEvent value) load,
   }) {
     return load(this);
   }
@@ -313,8 +288,8 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsFavoriteEvent value)? favorite,
-    TResult? Function(_NewsLoadEvent value)? load,
+    TResult? Function(_SourcesFavoriteEvent value)? favorite,
+    TResult? Function(_SourcesLoadEvent value)? load,
   }) {
     return load?.call(this);
   }
@@ -322,8 +297,8 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsFavoriteEvent value)? favorite,
-    TResult Function(_NewsLoadEvent value)? load,
+    TResult Function(_SourcesFavoriteEvent value)? favorite,
+    TResult Function(_SourcesLoadEvent value)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -333,73 +308,69 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   }
 }
 
-abstract class _NewsLoadEvent implements NewsEvent {
-  const factory _NewsLoadEvent(final String source) = _$_NewsLoadEvent;
-
-  String get source;
-  @JsonKey(ignore: true)
-  _$$_NewsLoadEventCopyWith<_$_NewsLoadEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _SourcesLoadEvent implements SourcesEvent {
+  const factory _SourcesLoadEvent() = _$_SourcesLoadEvent;
 }
 
 /// @nodoc
-mixin _$NewsState {
+mixin _$SourcesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+    required TResult Function(SourcesViewModel viewModel) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
+    TResult? Function(SourcesViewModel viewModel)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
+    TResult Function(SourcesViewModel viewModel)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(_SourcesInitialState value) initial,
+    required TResult Function(_SourcesLoadingState value) loading,
+    required TResult Function(_SourcesLoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(_SourcesInitialState value)? initial,
+    TResult? Function(_SourcesLoadingState value)? loading,
+    TResult? Function(_SourcesLoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(_SourcesInitialState value)? initial,
+    TResult Function(_SourcesLoadingState value)? loading,
+    TResult Function(_SourcesLoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NewsStateCopyWith<$Res> {
-  factory $NewsStateCopyWith(NewsState value, $Res Function(NewsState) then) =
-      _$NewsStateCopyWithImpl<$Res, NewsState>;
+abstract class $SourcesStateCopyWith<$Res> {
+  factory $SourcesStateCopyWith(
+          SourcesState value, $Res Function(SourcesState) then) =
+      _$SourcesStateCopyWithImpl<$Res, SourcesState>;
 }
 
 /// @nodoc
-class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
-    implements $NewsStateCopyWith<$Res> {
-  _$NewsStateCopyWithImpl(this._value, this._then);
+class _$SourcesStateCopyWithImpl<$Res, $Val extends SourcesState>
+    implements $SourcesStateCopyWith<$Res> {
+  _$SourcesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -408,35 +379,35 @@ class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
 }
 
 /// @nodoc
-abstract class _$$_NewsInitialStateCopyWith<$Res> {
-  factory _$$_NewsInitialStateCopyWith(
-          _$_NewsInitialState value, $Res Function(_$_NewsInitialState) then) =
-      __$$_NewsInitialStateCopyWithImpl<$Res>;
+abstract class _$$_SourcesInitialStateCopyWith<$Res> {
+  factory _$$_SourcesInitialStateCopyWith(_$_SourcesInitialState value,
+          $Res Function(_$_SourcesInitialState) then) =
+      __$$_SourcesInitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NewsInitialStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$_NewsInitialState>
-    implements _$$_NewsInitialStateCopyWith<$Res> {
-  __$$_NewsInitialStateCopyWithImpl(
-      _$_NewsInitialState _value, $Res Function(_$_NewsInitialState) _then)
+class __$$_SourcesInitialStateCopyWithImpl<$Res>
+    extends _$SourcesStateCopyWithImpl<$Res, _$_SourcesInitialState>
+    implements _$$_SourcesInitialStateCopyWith<$Res> {
+  __$$_SourcesInitialStateCopyWithImpl(_$_SourcesInitialState _value,
+      $Res Function(_$_SourcesInitialState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NewsInitialState implements _NewsInitialState {
-  const _$_NewsInitialState();
+class _$_SourcesInitialState implements _SourcesInitialState {
+  const _$_SourcesInitialState();
 
   @override
   String toString() {
-    return 'NewsState.initial()';
+    return 'SourcesState.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NewsInitialState);
+        (other.runtimeType == runtimeType && other is _$_SourcesInitialState);
   }
 
   @override
@@ -447,7 +418,7 @@ class _$_NewsInitialState implements _NewsInitialState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+    required TResult Function(SourcesViewModel viewModel) loaded,
   }) {
     return initial();
   }
@@ -457,7 +428,7 @@ class _$_NewsInitialState implements _NewsInitialState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
+    TResult? Function(SourcesViewModel viewModel)? loaded,
   }) {
     return initial?.call();
   }
@@ -467,7 +438,7 @@ class _$_NewsInitialState implements _NewsInitialState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
+    TResult Function(SourcesViewModel viewModel)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -479,9 +450,9 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(_SourcesInitialState value) initial,
+    required TResult Function(_SourcesLoadingState value) loading,
+    required TResult Function(_SourcesLoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -489,9 +460,9 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(_SourcesInitialState value)? initial,
+    TResult? Function(_SourcesLoadingState value)? loading,
+    TResult? Function(_SourcesLoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -499,9 +470,9 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(_SourcesInitialState value)? initial,
+    TResult Function(_SourcesLoadingState value)? loading,
+    TResult Function(_SourcesLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -511,40 +482,40 @@ class _$_NewsInitialState implements _NewsInitialState {
   }
 }
 
-abstract class _NewsInitialState implements NewsState {
-  const factory _NewsInitialState() = _$_NewsInitialState;
+abstract class _SourcesInitialState implements SourcesState {
+  const factory _SourcesInitialState() = _$_SourcesInitialState;
 }
 
 /// @nodoc
-abstract class _$$_NewsLoadingStateCopyWith<$Res> {
-  factory _$$_NewsLoadingStateCopyWith(
-          _$_NewsLoadingState value, $Res Function(_$_NewsLoadingState) then) =
-      __$$_NewsLoadingStateCopyWithImpl<$Res>;
+abstract class _$$_SourcesLoadingStateCopyWith<$Res> {
+  factory _$$_SourcesLoadingStateCopyWith(_$_SourcesLoadingState value,
+          $Res Function(_$_SourcesLoadingState) then) =
+      __$$_SourcesLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NewsLoadingStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$_NewsLoadingState>
-    implements _$$_NewsLoadingStateCopyWith<$Res> {
-  __$$_NewsLoadingStateCopyWithImpl(
-      _$_NewsLoadingState _value, $Res Function(_$_NewsLoadingState) _then)
+class __$$_SourcesLoadingStateCopyWithImpl<$Res>
+    extends _$SourcesStateCopyWithImpl<$Res, _$_SourcesLoadingState>
+    implements _$$_SourcesLoadingStateCopyWith<$Res> {
+  __$$_SourcesLoadingStateCopyWithImpl(_$_SourcesLoadingState _value,
+      $Res Function(_$_SourcesLoadingState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NewsLoadingState implements _NewsLoadingState {
-  const _$_NewsLoadingState();
+class _$_SourcesLoadingState implements _SourcesLoadingState {
+  const _$_SourcesLoadingState();
 
   @override
   String toString() {
-    return 'NewsState.loading()';
+    return 'SourcesState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NewsLoadingState);
+        (other.runtimeType == runtimeType && other is _$_SourcesLoadingState);
   }
 
   @override
@@ -555,7 +526,7 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+    required TResult Function(SourcesViewModel viewModel) loaded,
   }) {
     return loading();
   }
@@ -565,7 +536,7 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
+    TResult? Function(SourcesViewModel viewModel)? loaded,
   }) {
     return loading?.call();
   }
@@ -575,7 +546,7 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
+    TResult Function(SourcesViewModel viewModel)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -587,9 +558,9 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(_SourcesInitialState value) initial,
+    required TResult Function(_SourcesLoadingState value) loading,
+    required TResult Function(_SourcesLoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -597,9 +568,9 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(_SourcesInitialState value)? initial,
+    TResult? Function(_SourcesLoadingState value)? loading,
+    TResult? Function(_SourcesLoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -607,9 +578,9 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(_SourcesInitialState value)? initial,
+    TResult Function(_SourcesLoadingState value)? loading,
+    TResult Function(_SourcesLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -619,25 +590,25 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   }
 }
 
-abstract class _NewsLoadingState implements NewsState {
-  const factory _NewsLoadingState() = _$_NewsLoadingState;
+abstract class _SourcesLoadingState implements SourcesState {
+  const factory _SourcesLoadingState() = _$_SourcesLoadingState;
 }
 
 /// @nodoc
-abstract class _$$_NewsLoadedStateCopyWith<$Res> {
-  factory _$$_NewsLoadedStateCopyWith(
-          _$_NewsLoadedState value, $Res Function(_$_NewsLoadedState) then) =
-      __$$_NewsLoadedStateCopyWithImpl<$Res>;
+abstract class _$$_SourcesLoadedStateCopyWith<$Res> {
+  factory _$$_SourcesLoadedStateCopyWith(_$_SourcesLoadedState value,
+          $Res Function(_$_SourcesLoadedState) then) =
+      __$$_SourcesLoadedStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({NewsViewModel viewModel});
+  $Res call({SourcesViewModel viewModel});
 }
 
 /// @nodoc
-class __$$_NewsLoadedStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$_NewsLoadedState>
-    implements _$$_NewsLoadedStateCopyWith<$Res> {
-  __$$_NewsLoadedStateCopyWithImpl(
-      _$_NewsLoadedState _value, $Res Function(_$_NewsLoadedState) _then)
+class __$$_SourcesLoadedStateCopyWithImpl<$Res>
+    extends _$SourcesStateCopyWithImpl<$Res, _$_SourcesLoadedState>
+    implements _$$_SourcesLoadedStateCopyWith<$Res> {
+  __$$_SourcesLoadedStateCopyWithImpl(
+      _$_SourcesLoadedState _value, $Res Function(_$_SourcesLoadedState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -645,33 +616,33 @@ class __$$_NewsLoadedStateCopyWithImpl<$Res>
   $Res call({
     Object? viewModel = null,
   }) {
-    return _then(_$_NewsLoadedState(
+    return _then(_$_SourcesLoadedState(
       null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
-              as NewsViewModel,
+              as SourcesViewModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_NewsLoadedState implements _NewsLoadedState {
-  const _$_NewsLoadedState(this.viewModel);
+class _$_SourcesLoadedState implements _SourcesLoadedState {
+  const _$_SourcesLoadedState(this.viewModel);
 
   @override
-  final NewsViewModel viewModel;
+  final SourcesViewModel viewModel;
 
   @override
   String toString() {
-    return 'NewsState.loaded(viewModel: $viewModel)';
+    return 'SourcesState.loaded(viewModel: $viewModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewsLoadedState &&
+            other is _$_SourcesLoadedState &&
             (identical(other.viewModel, viewModel) ||
                 other.viewModel == viewModel));
   }
@@ -682,15 +653,16 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewsLoadedStateCopyWith<_$_NewsLoadedState> get copyWith =>
-      __$$_NewsLoadedStateCopyWithImpl<_$_NewsLoadedState>(this, _$identity);
+  _$$_SourcesLoadedStateCopyWith<_$_SourcesLoadedState> get copyWith =>
+      __$$_SourcesLoadedStateCopyWithImpl<_$_SourcesLoadedState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NewsViewModel viewModel) loaded,
+    required TResult Function(SourcesViewModel viewModel) loaded,
   }) {
     return loaded(viewModel);
   }
@@ -700,7 +672,7 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NewsViewModel viewModel)? loaded,
+    TResult? Function(SourcesViewModel viewModel)? loaded,
   }) {
     return loaded?.call(viewModel);
   }
@@ -710,7 +682,7 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NewsViewModel viewModel)? loaded,
+    TResult Function(SourcesViewModel viewModel)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -722,9 +694,9 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(_SourcesInitialState value) initial,
+    required TResult Function(_SourcesLoadingState value) loading,
+    required TResult Function(_SourcesLoadedState value) loaded,
   }) {
     return loaded(this);
   }
@@ -732,9 +704,9 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(_SourcesInitialState value)? initial,
+    TResult? Function(_SourcesLoadingState value)? loading,
+    TResult? Function(_SourcesLoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -742,9 +714,9 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(_SourcesInitialState value)? initial,
+    TResult Function(_SourcesLoadingState value)? loading,
+    TResult Function(_SourcesLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -754,12 +726,12 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   }
 }
 
-abstract class _NewsLoadedState implements NewsState {
-  const factory _NewsLoadedState(final NewsViewModel viewModel) =
-      _$_NewsLoadedState;
+abstract class _SourcesLoadedState implements SourcesState {
+  const factory _SourcesLoadedState(final SourcesViewModel viewModel) =
+      _$_SourcesLoadedState;
 
-  NewsViewModel get viewModel;
+  SourcesViewModel get viewModel;
   @JsonKey(ignore: true)
-  _$$_NewsLoadedStateCopyWith<_$_NewsLoadedState> get copyWith =>
+  _$$_SourcesLoadedStateCopyWith<_$_SourcesLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
 }
