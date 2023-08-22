@@ -1,0 +1,2 @@
+# takehome
+Simple News Client
