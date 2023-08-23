@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -15,6 +17,8 @@ part 'sources_state.dart';
 class SourcesBloc extends Bloc<SourcesEvent, SourcesState> {
   final LoadSourcesUC _loadSourcesUC;
 
+  StreamSubscription? refreshSubscr;
+
   SourcesBloc(
     this._loadSourcesUC,
   ) : super(
@@ -26,9 +30,22 @@ class SourcesBloc extends Bloc<SourcesEvent, SourcesState> {
 
   init() {
     add(const SourcesEvent.load());
+    refreshSubscr?.cancel();
+    refreshSubscr = Stream.periodic(
+      const Duration(minutes: 1),
+    ).listen((event) {
+      add(const SourcesEvent.load());
+    });
+  }
+
+  @override
+  Future<void> close() {
+    refreshSubscr?.cancel();
+    return super.close();
   }
 
   _loadSources(Emitter emit) async {
+    emit(const SourcesState.loading());
     final result = await _loadSourcesUC.call();
     emit(
       SourcesState.loaded(result.toViewModel()),

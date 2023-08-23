@@ -25,7 +25,7 @@ class _SourcesPageState extends State<SourcesPage> with AutomaticKeepAliveClient
       child: BlocBuilder<SourcesBloc, SourcesState>(
         builder: (context, state) => state.when(
           initial: () => const SizedBox(),
-          loading: () => const CircularProgressIndicator.adaptive(),
+          loading: () => const CircularProgressIndicator(),
           loaded: (uiModel) {
             return SourcesContent(model: uiModel);
           },

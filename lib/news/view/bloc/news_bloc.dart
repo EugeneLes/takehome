@@ -19,6 +19,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
   final WatchFavoritesUC _watchFavoritesUC;
 
   StreamSubscription? favStream;
+  StreamSubscription? refreshSubscr;
 
   NewsBloc(
     this._loadNewsUC,
@@ -35,10 +36,17 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     favStream = _watchFavoritesUC.call().listen((event) {
       add(NewsEvent.load(source));
     });
+    refreshSubscr?.cancel();
+    refreshSubscr = Stream.periodic(
+      const Duration(minutes: 1),
+    ).listen((event) {
+      add(NewsEvent.load(source));
+    });
   }
 
   @override
   Future<void> close() {
+    refreshSubscr?.cancel();
     favStream?.cancel();
     return super.close();
   }

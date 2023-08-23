@@ -23,7 +23,7 @@ class _NewsPageState extends State<NewsPage> {
         child: BlocBuilder<NewsBloc, NewsState>(
           builder: (context, state) => state.when(
             initial: () => const SizedBox(),
-            loading: () => const CircularProgressIndicator.adaptive(),
+            loading: () => const CircularProgressIndicator(),
             loaded: (uiModel) {
               return NewsContent(model: uiModel);
             },
