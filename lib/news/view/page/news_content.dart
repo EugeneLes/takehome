@@ -11,12 +11,8 @@ class NewsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(' model.sections.length: ${model.sections.length}');
-
     return ListView.builder(
       itemBuilder: (context, index) {
-        // print('NewsContent, itemBuilder, index: $index.');
-
         return ArticleItem(model: model.articles[index]);
       },
       itemCount: model.articles.length,

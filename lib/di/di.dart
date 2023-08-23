@@ -5,4 +5,4 @@ import '../shared/di/di.dart';
 import 'di.config.dart';
 
 @InjectableInit()
-void configureDependencies() => get.init();
+Future<void> configureDependencies() => get.init();

@@ -13,14 +13,9 @@ class NewsPage extends StatefulWidget {
   State<NewsPage> createState() => _NewsPageState();
 }
 
-class _NewsPageState extends State<NewsPage> with AutomaticKeepAliveClientMixin<NewsPage> {
-  @override
-  bool get wantKeepAlive => true;
-
+class _NewsPageState extends State<NewsPage> {
   @override
   Widget build(BuildContext context) {
-    super.build(context);
-
     return Scaffold(
       appBar: AppBar(title: Text('News from ${widget.source}')),
       body: BlocProvider(

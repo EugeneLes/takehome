@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:takehome/home_page.dart';
+import 'package:takehome/news/view/model/news_article_view_model.dart';
+import 'package:takehome/news/view/page/article_page.dart';
 import 'package:takehome/news/view/page/news_page.dart';
 
 part 'routes.g.dart';
@@ -16,7 +18,15 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
 @TypedGoRoute<HomeRoute>(
   path: '/home',
-  routes: [TypedGoRoute<NewsRoute>(path: ':source')],
+  routes: [
+    TypedGoRoute<NewsRoute>(
+      path: ':source',
+      routes: [
+        TypedGoRoute<ArticleRoute>(path: 'article'),
+      ],
+    ),
+    TypedGoRoute<FavArticleRoute>(path: 'article'),
+  ],
 )
 class HomeRoute extends GoRouteData {
   const HomeRoute();
@@ -33,9 +43,35 @@ class NewsRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     final id = state.pathParameters['source']!;
-    print('NewsRoute id: $id');
     return NewsPage(
       source: id,
+    );
+  }
+}
+
+class ArticleRoute extends GoRouteData {
+  ArticleRoute(this.source, {required this.$extra});
+
+  final NewsArticleViewModel $extra;
+  final String source;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return ArticlePage(
+      model: $extra,
+    );
+  }
+}
+
+class FavArticleRoute extends GoRouteData {
+  FavArticleRoute({required this.$extra});
+
+  final NewsArticleViewModel $extra;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return ArticlePage(
+      model: $extra,
     );
   }
 }

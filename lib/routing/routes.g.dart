@@ -17,6 +17,16 @@ RouteBase get $homeRoute => GoRouteData.$route(
         GoRouteData.$route(
           path: ':source',
           factory: $NewsRouteExtension._fromState,
+          routes: [
+            GoRouteData.$route(
+              path: 'article',
+              factory: $ArticleRouteExtension._fromState,
+            ),
+          ],
+        ),
+        GoRouteData.$route(
+          path: 'article',
+          factory: $FavArticleRouteExtension._fromState,
         ),
       ],
     );
@@ -55,4 +65,47 @@ extension $NewsRouteExtension on NewsRoute {
       context.pushReplacement(location);
 
   void replace(BuildContext context) => context.replace(location);
+}
+
+extension $ArticleRouteExtension on ArticleRoute {
+  static ArticleRoute _fromState(GoRouterState state) => ArticleRoute(
+        state.pathParameters['source']!,
+        $extra: state.extra as NewsArticleViewModel,
+      );
+
+  String get location => GoRouteData.$location(
+        '/home/${Uri.encodeComponent(source)}/article',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: $extra);
+
+  Future<T?> push<T>(BuildContext context) =>
+      context.push<T>(location, extra: $extra);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location, extra: $extra);
+
+  void replace(BuildContext context) =>
+      context.replace(location, extra: $extra);
+}
+
+extension $FavArticleRouteExtension on FavArticleRoute {
+  static FavArticleRoute _fromState(GoRouterState state) => FavArticleRoute(
+        $extra: state.extra as NewsArticleViewModel,
+      );
+
+  String get location => GoRouteData.$location(
+        '/home/article',
+      );
+
+  void go(BuildContext context) => context.go(location, extra: $extra);
+
+  Future<T?> push<T>(BuildContext context) =>
+      context.push<T>(location, extra: $extra);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location, extra: $extra);
+
+  void replace(BuildContext context) =>
+      context.replace(location, extra: $extra);
 }

@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:takehome/favorites/domain/models/extensions.dart';
+import 'package:takehome/favorites/domain/usecases/watch_favorites.dart';
+import 'package:takehome/news/domain/models/news_model.dart';
 import 'package:takehome/news/domain/usecases/load_news.dart';
-import 'package:takehome/news/view/model/news_article_view_model.dart';
 import 'package:takehome/news/view/model/news_view_model.dart';
 
 part 'news_bloc.freezed.dart';
@@ -12,41 +16,44 @@ part 'news_state.dart';
 @Injectable()
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
   final LoadNewsUC _loadNewsUC;
+  final WatchFavoritesUC _watchFavoritesUC;
+
+  StreamSubscription? favStream;
 
   NewsBloc(
     this._loadNewsUC,
+    this._watchFavoritesUC,
   ) : super(
           const NewsState.initial(),
         ) {
-    on<_NewsLoadEvent>((_, emit) => _loadNews(emit));
-    on<_NewsFavoriteEvent>((event, emit) => _markArticle(event, emit));
+    on<_NewsLoadEvent>((event, emit) => _loadNews(event, emit));
   }
 
   init(String source) {
     add(NewsEvent.load(source));
+    favStream?.cancel();
+    favStream = _watchFavoritesUC.call().listen((event) {
+      add(NewsEvent.load(source));
+    });
   }
 
-  _loadNews(Emitter emit) {
-    _loadNewsUC.call('id1');
+  @override
+  Future<void> close() {
+    favStream?.cancel();
+    return super.close();
+  }
+
+  _loadNews(_NewsLoadEvent event, Emitter emit) async {
+    emit(const NewsState.loading());
+    final result = await _loadNewsUC.call(event.source);
     emit(
       NewsState.loaded(
-        NewsViewModel([
-          NewsArticleVM('article1', 'text1'),
-          NewsArticleVM('article2', 'text2'),
-          NewsArticleVM('article3', 'text3'),
-          NewsArticleVM('article4', 'text4'),
-          NewsArticleVM('article5', 'text5'),
-          NewsArticleVM('article6', 'text6'),
-          NewsArticleVM('article7', 'text7'),
-          NewsArticleVM('article8', 'text8'),
-          NewsArticleVM('article9', 'text9'),
-          NewsArticleVM('article10', 'text10'),
-          NewsArticleVM('article11', 'text11'),
-          NewsArticleVM('article12', 'text12'),
-        ]),
+        result.toViewModel(),
       ),
     );
   }
+}
 
-  _markArticle(_NewsFavoriteEvent event, Emitter emit) {}
+extension NewsModelX on NewsModel {
+  NewsViewModel toViewModel() => NewsViewModel(articles.map((e) => e.toViewModel()).toList());
 }

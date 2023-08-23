@@ -1,6 +1,11 @@
 import 'package:injectable/injectable.dart';
 import 'package:takehome/news/data/datasource/news_api.dart';
+import 'package:takehome/news/data/models/article_dto.dart';
+import 'package:takehome/news/data/models/source_dto.dart';
 import 'package:takehome/news/data/models/sources_dto.dart';
+import 'package:takehome/news/data/models/top_headlines_dto.dart';
+import 'package:takehome/news/domain/models/article_model.dart';
+import 'package:takehome/news/domain/models/source_model.dart';
 
 @LazySingleton()
 class NewsRepository {
@@ -12,28 +17,57 @@ class NewsRepository {
   }
 
   Future<void> getNews() async {
-    final result = await newsApi.getEverything();
-    print('result: $result');
+    await newsApi.getEverything();
   }
 
-  Future<void> getTopHeadlines(
+  Future<TopHeadlinesDTO> getTopHeadlines({
     String? sources,
     int? pageSize,
     int? page,
-  ) async {
+  }) async {
     final result = await newsApi.getTopHeadlines(
       sources: sources,
       pageSize: pageSize,
       page: page,
     );
-    print('getTopHeadlines result: $result');
+    final topHeadlines = TopHeadlinesDTO.fromJson(result.body);
+    return topHeadlines;
   }
 
   Future<SourcesDTO> getSources() async {
     final result = await newsApi.getSources();
 
-    print('getSources result.body: ${result.body}');
     final sources = SourcesDTO.fromJson(result.body);
     return sources;
   }
+}
+
+extension SourceX on SourceDTO {
+  SourceModel toModel() => SourceModel(
+        id: id,
+        name: name,
+        description: description,
+        url: url,
+        category: category,
+        language: language,
+        country: country,
+      );
+}
+
+// extension NewsModelDtoX on TopHeadlinesDTO {
+//   NewsModel toModel() => NewsModel(articles.map((e) => e.toModel()).toList());
+// }
+
+extension ArticleDtoX on ArticleDTO {
+  ArticleModel toModel({int? id, bool? isFavorite}) => ArticleModel(
+      id: id,
+      source: source.toModel(),
+      author: author,
+      title: title,
+      description: description,
+      url: url,
+      urlToImage: urlToImage,
+      publishedAt: publishedAt,
+      content: content,
+      isFavorite: isFavorite ?? false);
 }

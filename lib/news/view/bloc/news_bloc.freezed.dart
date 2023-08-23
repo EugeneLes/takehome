@@ -16,43 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewsEvent {
+  String get source => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String articleId) favorite,
     required TResult Function(String source) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String articleId)? favorite,
     TResult? Function(String source)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String articleId)? favorite,
     TResult Function(String source)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsFavoriteEvent value) favorite,
     required TResult Function(_NewsLoadEvent value) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsFavoriteEvent value)? favorite,
     TResult? Function(_NewsLoadEvent value)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsFavoriteEvent value)? favorite,
     TResult Function(_NewsLoadEvent value)? load,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $NewsEventCopyWith<NewsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,6 +59,8 @@ mixin _$NewsEvent {
 abstract class $NewsEventCopyWith<$Res> {
   factory $NewsEventCopyWith(NewsEvent value, $Res Function(NewsEvent) then) =
       _$NewsEventCopyWithImpl<$Res, NewsEvent>;
+  @useResult
+  $Res call({String source});
 }
 
 /// @nodoc
@@ -71,149 +72,28 @@ class _$NewsEventCopyWithImpl<$Res, $Val extends NewsEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$_NewsFavoriteEventCopyWith<$Res> {
-  factory _$$_NewsFavoriteEventCopyWith(_$_NewsFavoriteEvent value,
-          $Res Function(_$_NewsFavoriteEvent) then) =
-      __$$_NewsFavoriteEventCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String articleId});
-}
-
-/// @nodoc
-class __$$_NewsFavoriteEventCopyWithImpl<$Res>
-    extends _$NewsEventCopyWithImpl<$Res, _$_NewsFavoriteEvent>
-    implements _$$_NewsFavoriteEventCopyWith<$Res> {
-  __$$_NewsFavoriteEventCopyWithImpl(
-      _$_NewsFavoriteEvent _value, $Res Function(_$_NewsFavoriteEvent) _then)
-      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? articleId = null,
+    Object? source = null,
   }) {
-    return _then(_$_NewsFavoriteEvent(
-      null == articleId
-          ? _value.articleId
-          : articleId // ignore: cast_nullable_to_non_nullable
+    return _then(_value.copyWith(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-
-class _$_NewsFavoriteEvent implements _NewsFavoriteEvent {
-  const _$_NewsFavoriteEvent(this.articleId);
-
-  @override
-  final String articleId;
-
-  @override
-  String toString() {
-    return 'NewsEvent.favorite(articleId: $articleId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_NewsFavoriteEvent &&
-            (identical(other.articleId, articleId) ||
-                other.articleId == articleId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, articleId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_NewsFavoriteEventCopyWith<_$_NewsFavoriteEvent> get copyWith =>
-      __$$_NewsFavoriteEventCopyWithImpl<_$_NewsFavoriteEvent>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String articleId) favorite,
-    required TResult Function(String source) load,
-  }) {
-    return favorite(articleId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String articleId)? favorite,
-    TResult? Function(String source)? load,
-  }) {
-    return favorite?.call(articleId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String articleId)? favorite,
-    TResult Function(String source)? load,
-    required TResult orElse(),
-  }) {
-    if (favorite != null) {
-      return favorite(articleId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_NewsFavoriteEvent value) favorite,
-    required TResult Function(_NewsLoadEvent value) load,
-  }) {
-    return favorite(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsFavoriteEvent value)? favorite,
-    TResult? Function(_NewsLoadEvent value)? load,
-  }) {
-    return favorite?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsFavoriteEvent value)? favorite,
-    TResult Function(_NewsLoadEvent value)? load,
-    required TResult orElse(),
-  }) {
-    if (favorite != null) {
-      return favorite(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _NewsFavoriteEvent implements NewsEvent {
-  const factory _NewsFavoriteEvent(final String articleId) =
-      _$_NewsFavoriteEvent;
-
-  String get articleId;
-  @JsonKey(ignore: true)
-  _$$_NewsFavoriteEventCopyWith<_$_NewsFavoriteEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_NewsLoadEventCopyWith<$Res> {
+abstract class _$$_NewsLoadEventCopyWith<$Res>
+    implements $NewsEventCopyWith<$Res> {
   factory _$$_NewsLoadEventCopyWith(
           _$_NewsLoadEvent value, $Res Function(_$_NewsLoadEvent) then) =
       __$$_NewsLoadEventCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String source});
 }
@@ -273,7 +153,6 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String articleId) favorite,
     required TResult Function(String source) load,
   }) {
     return load(source);
@@ -282,7 +161,6 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String articleId)? favorite,
     TResult? Function(String source)? load,
   }) {
     return load?.call(source);
@@ -291,7 +169,6 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String articleId)? favorite,
     TResult Function(String source)? load,
     required TResult orElse(),
   }) {
@@ -304,7 +181,6 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsFavoriteEvent value) favorite,
     required TResult Function(_NewsLoadEvent value) load,
   }) {
     return load(this);
@@ -313,7 +189,6 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsFavoriteEvent value)? favorite,
     TResult? Function(_NewsLoadEvent value)? load,
   }) {
     return load?.call(this);
@@ -322,7 +197,6 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsFavoriteEvent value)? favorite,
     TResult Function(_NewsLoadEvent value)? load,
     required TResult orElse(),
   }) {
@@ -336,7 +210,9 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
 abstract class _NewsLoadEvent implements NewsEvent {
   const factory _NewsLoadEvent(final String source) = _$_NewsLoadEvent;
 
+  @override
   String get source;
+  @override
   @JsonKey(ignore: true)
   _$$_NewsLoadEventCopyWith<_$_NewsLoadEvent> get copyWith =>
       throw _privateConstructorUsedError;

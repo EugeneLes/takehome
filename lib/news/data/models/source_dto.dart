@@ -6,7 +6,6 @@ part 'source_dto.g.dart';
 class SourceDTO {
   @JsonKey(name: 'id')
   final String id;
-
   @JsonKey(name: 'name')
   final String name;
   @JsonKey(name: 'description')

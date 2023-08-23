@@ -11,10 +11,10 @@ class SourceModel {
   SourceModel({
     required this.id,
     required this.name,
-    required this.description,
-    required this.url,
-    required this.category,
-    required this.language,
-    required this.country,
+    this.description,
+    this.url,
+    this.category,
+    this.language,
+    this.country,
   });
 }

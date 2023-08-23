@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:takehome/favorites/view/bloc/favorites_bloc.dart';
 import 'package:takehome/routing/routes.dart';
+import 'package:takehome/shared/di/di.dart';
 
 import 'di/di.dart';
 
@@ -14,6 +17,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   late Future<bool> _dependencyInitFuture;
   late GoRouter router;
+  late FavoritesBloc favBloc;
 
   @override
   void initState() {
@@ -33,7 +37,8 @@ class _AppState extends State<App> {
 
   Future<bool> _configureDependencies() async {
     try {
-      configureDependencies();
+      await configureDependencies();
+      favBloc = get<FavoritesBloc>();
       return true;
     } catch (e) {
       print('Failed to configure dependencies: $e');
@@ -48,27 +53,30 @@ class _AppState extends State<App> {
       future: _dependencyInitFuture,
       builder: (context, snapshot) {
         if (snapshot.hasData && snapshot.data == true) {
-          return MaterialApp.router(
-            title: 'Simple News Client',
-            routerConfig: router,
-            theme: ThemeData(
-              // This is the theme of your application.
-              //
-              // TRY THIS: Try running your application with "flutter run". You'll see
-              // the application has a blue toolbar. Then, without quitting the app,
-              // try changing the seedColor in the colorScheme below to Colors.green
-              // and then invoke "hot reload" (save your changes or press the "hot
-              // reload" button in a Flutter-supported IDE, or press "r" if you used
-              // the command line to start the app).
-              //
-              // Notice that the counter didn't reset back to zero; the application
-              // state is not lost during the reload. To reset the state, use hot
-              // restart instead.
-              //
-              // This works for code too, not just values: Most code changes can be
-              // tested with just a hot reload.
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
+          return BlocProvider.value(
+            value: favBloc,
+            child: MaterialApp.router(
+              title: 'Simple News Client',
+              routerConfig: router,
+              theme: ThemeData(
+                // This is the theme of your application.
+                //
+                // TRY THIS: Try running your application with "flutter run". You'll see
+                // the application has a blue toolbar. Then, without quitting the app,
+                // try changing the seedColor in the colorScheme below to Colors.green
+                // and then invoke "hot reload" (save your changes or press the "hot
+                // reload" button in a Flutter-supported IDE, or press "r" if you used
+                // the command line to start the app).
+                //
+                // Notice that the counter didn't reset back to zero; the application
+                // state is not lost during the reload. To reset the state, use hot
+                // restart instead.
+                //
+                // This works for code too, not just values: Most code changes can be
+                // tested with just a hot reload.
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+              ),
             ),
           );
         } else {

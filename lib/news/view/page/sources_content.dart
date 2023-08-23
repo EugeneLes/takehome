@@ -11,12 +11,8 @@ class SourcesContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(' model.sections.length: ${model.sections.length}');
-
     return ListView.builder(
       itemBuilder: (context, index) {
-        // print('NewsContent, itemBuilder, index: $index.');
-
         return SourceItem(model: model.sources[index]);
       },
       itemCount: model.sources.length,
