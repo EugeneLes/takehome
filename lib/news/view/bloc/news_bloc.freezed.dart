@@ -17,19 +17,20 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NewsEvent {
   String get source => throw _privateConstructorUsedError;
+  bool get skipLoader => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String source) load,
+    required TResult Function(String source, bool skipLoader) load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String source)? load,
+    TResult? Function(String source, bool skipLoader)? load,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String source)? load,
+    TResult Function(String source, bool skipLoader)? load,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,7 +61,7 @@ abstract class $NewsEventCopyWith<$Res> {
   factory $NewsEventCopyWith(NewsEvent value, $Res Function(NewsEvent) then) =
       _$NewsEventCopyWithImpl<$Res, NewsEvent>;
   @useResult
-  $Res call({String source});
+  $Res call({String source, bool skipLoader});
 }
 
 /// @nodoc
@@ -77,12 +78,17 @@ class _$NewsEventCopyWithImpl<$Res, $Val extends NewsEvent>
   @override
   $Res call({
     Object? source = null,
+    Object? skipLoader = null,
   }) {
     return _then(_value.copyWith(
       source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
+      skipLoader: null == skipLoader
+          ? _value.skipLoader
+          : skipLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -95,7 +101,7 @@ abstract class _$$_NewsLoadEventCopyWith<$Res>
       __$$_NewsLoadEventCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String source});
+  $Res call({String source, bool skipLoader});
 }
 
 /// @nodoc
@@ -110,12 +116,17 @@ class __$$_NewsLoadEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? source = null,
+    Object? skipLoader = null,
   }) {
     return _then(_$_NewsLoadEvent(
       null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
+      skipLoader: null == skipLoader
+          ? _value.skipLoader
+          : skipLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -123,14 +134,17 @@ class __$$_NewsLoadEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_NewsLoadEvent implements _NewsLoadEvent {
-  const _$_NewsLoadEvent(this.source);
+  const _$_NewsLoadEvent(this.source, {this.skipLoader = false});
 
   @override
   final String source;
+  @override
+  @JsonKey()
+  final bool skipLoader;
 
   @override
   String toString() {
-    return 'NewsEvent.load(source: $source)';
+    return 'NewsEvent.load(source: $source, skipLoader: $skipLoader)';
   }
 
   @override
@@ -138,11 +152,13 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NewsLoadEvent &&
-            (identical(other.source, source) || other.source == source));
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.skipLoader, skipLoader) ||
+                other.skipLoader == skipLoader));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, source);
+  int get hashCode => Object.hash(runtimeType, source, skipLoader);
 
   @JsonKey(ignore: true)
   @override
@@ -153,27 +169,27 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String source) load,
+    required TResult Function(String source, bool skipLoader) load,
   }) {
-    return load(source);
+    return load(source, skipLoader);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String source)? load,
+    TResult? Function(String source, bool skipLoader)? load,
   }) {
-    return load?.call(source);
+    return load?.call(source, skipLoader);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String source)? load,
+    TResult Function(String source, bool skipLoader)? load,
     required TResult orElse(),
   }) {
     if (load != null) {
-      return load(source);
+      return load(source, skipLoader);
     }
     return orElse();
   }
@@ -208,10 +224,13 @@ class _$_NewsLoadEvent implements _NewsLoadEvent {
 }
 
 abstract class _NewsLoadEvent implements NewsEvent {
-  const factory _NewsLoadEvent(final String source) = _$_NewsLoadEvent;
+  const factory _NewsLoadEvent(final String source, {final bool skipLoader}) =
+      _$_NewsLoadEvent;
 
   @override
   String get source;
+  @override
+  bool get skipLoader;
   @override
   @JsonKey(ignore: true)
   _$$_NewsLoadEventCopyWith<_$_NewsLoadEvent> get copyWith =>

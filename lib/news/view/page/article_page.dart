@@ -13,12 +13,26 @@ class ArticlePage extends StatefulWidget {
 }
 
 class _ArticlePageState extends State<ArticlePage> {
+  late bool isFavorite;
+
+  @override
+  void initState() {
+    super.initState();
+    isFavorite = widget.model.isFavorite;
+  }
+
   void _onPressed(BuildContext context) {
     print('ArticlePage _onFavPressed, model: ${widget.model}');
-    if (widget.model.isFavorite) {
+    if (isFavorite) {
       context.read<FavoritesBloc>().add(FavoritesEvent.unfavorite(widget.model));
+      setState(() {
+        isFavorite = false;
+      });
     } else {
       context.read<FavoritesBloc>().add(FavoritesEvent.favorite(widget.model));
+      setState(() {
+        isFavorite = true;
+      });
     }
   }
 
@@ -32,7 +46,7 @@ class _ArticlePageState extends State<ArticlePage> {
               onPressed: () => _onPressed(context),
               icon: Icon(
                 Icons.favorite,
-                color: widget.model.isFavorite ? Colors.red : Colors.grey,
+                color: isFavorite ? Colors.red : Colors.grey,
               ),
             )
           ],

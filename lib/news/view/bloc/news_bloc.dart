@@ -34,7 +34,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     add(NewsEvent.load(source));
     favStream?.cancel();
     favStream = _watchFavoritesUC.call().listen((event) {
-      add(NewsEvent.load(source));
+      add(NewsEvent.load(source, skipLoader: true));
     });
     refreshSubscr?.cancel();
     refreshSubscr = Stream.periodic(
@@ -52,7 +52,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
   }
 
   _loadNews(_NewsLoadEvent event, Emitter emit) async {
-    emit(const NewsState.loading());
+    if (!event.skipLoader) emit(const NewsState.loading());
     final result = await _loadNewsUC.call(event.source);
     emit(
       NewsState.loaded(
