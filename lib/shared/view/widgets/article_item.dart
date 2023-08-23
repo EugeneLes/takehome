@@ -14,7 +14,6 @@ class ArticleItem extends StatelessWidget {
   });
 
   _onFavPressed(BuildContext context) {
-    print('ArticleItem _onFavPressed, model: $model');
     if (isInFavorites || model.isFavorite) {
       context.read<FavoritesBloc>().add(FavoritesEvent.unfavorite(model));
     } else {

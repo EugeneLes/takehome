@@ -22,7 +22,6 @@ class _ArticlePageState extends State<ArticlePage> {
   }
 
   void _onPressed(BuildContext context) {
-    print('ArticlePage _onFavPressed, model: ${widget.model}');
     if (isFavorite) {
       context.read<FavoritesBloc>().add(FavoritesEvent.unfavorite(widget.model));
       setState(() {
@@ -40,7 +39,7 @@ class _ArticlePageState extends State<ArticlePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Article'),
+          title: const Text('Article'),
           actions: [
             IconButton(
               onPressed: () => _onPressed(context),

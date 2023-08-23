@@ -68,12 +68,11 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
 
   void _removeArticle(_UnfavoriteEvent event, Emitter emit) async {
     final id = event.article.id;
-    print('FavBloc _removeArticle id:$id, art: ${event.article}');
     if (id != null) {
       final res = await _removeArticleUC.call(id);
       if (res) add(const FavoritesEvent.load());
     } else {
-      print('!!!--- Warning, trying to remove article without id, art: ${event.article}');
+      print('!!! Warning, trying to remove article without id, art: ${event.article}');
     }
   }
 }

@@ -263,23 +263,23 @@ mixin _$NewsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(NewsInitialState value) initial,
+    required TResult Function(NewsLoadingState value) loading,
+    required TResult Function(NewsLoadedState value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(NewsInitialState value)? initial,
+    TResult? Function(NewsLoadingState value)? loading,
+    TResult? Function(NewsLoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(NewsInitialState value)? initial,
+    TResult Function(NewsLoadingState value)? loading,
+    TResult Function(NewsLoadedState value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -303,25 +303,25 @@ class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
 }
 
 /// @nodoc
-abstract class _$$_NewsInitialStateCopyWith<$Res> {
-  factory _$$_NewsInitialStateCopyWith(
-          _$_NewsInitialState value, $Res Function(_$_NewsInitialState) then) =
-      __$$_NewsInitialStateCopyWithImpl<$Res>;
+abstract class _$$NewsInitialStateCopyWith<$Res> {
+  factory _$$NewsInitialStateCopyWith(
+          _$NewsInitialState value, $Res Function(_$NewsInitialState) then) =
+      __$$NewsInitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NewsInitialStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$_NewsInitialState>
-    implements _$$_NewsInitialStateCopyWith<$Res> {
-  __$$_NewsInitialStateCopyWithImpl(
-      _$_NewsInitialState _value, $Res Function(_$_NewsInitialState) _then)
+class __$$NewsInitialStateCopyWithImpl<$Res>
+    extends _$NewsStateCopyWithImpl<$Res, _$NewsInitialState>
+    implements _$$NewsInitialStateCopyWith<$Res> {
+  __$$NewsInitialStateCopyWithImpl(
+      _$NewsInitialState _value, $Res Function(_$NewsInitialState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NewsInitialState implements _NewsInitialState {
-  const _$_NewsInitialState();
+class _$NewsInitialState implements NewsInitialState {
+  const _$NewsInitialState();
 
   @override
   String toString() {
@@ -331,7 +331,7 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NewsInitialState);
+        (other.runtimeType == runtimeType && other is _$NewsInitialState);
   }
 
   @override
@@ -374,9 +374,9 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(NewsInitialState value) initial,
+    required TResult Function(NewsLoadingState value) loading,
+    required TResult Function(NewsLoadedState value) loaded,
   }) {
     return initial(this);
   }
@@ -384,9 +384,9 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(NewsInitialState value)? initial,
+    TResult? Function(NewsLoadingState value)? loading,
+    TResult? Function(NewsLoadedState value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -394,9 +394,9 @@ class _$_NewsInitialState implements _NewsInitialState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(NewsInitialState value)? initial,
+    TResult Function(NewsLoadingState value)? loading,
+    TResult Function(NewsLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -406,30 +406,30 @@ class _$_NewsInitialState implements _NewsInitialState {
   }
 }
 
-abstract class _NewsInitialState implements NewsState {
-  const factory _NewsInitialState() = _$_NewsInitialState;
+abstract class NewsInitialState implements NewsState {
+  const factory NewsInitialState() = _$NewsInitialState;
 }
 
 /// @nodoc
-abstract class _$$_NewsLoadingStateCopyWith<$Res> {
-  factory _$$_NewsLoadingStateCopyWith(
-          _$_NewsLoadingState value, $Res Function(_$_NewsLoadingState) then) =
-      __$$_NewsLoadingStateCopyWithImpl<$Res>;
+abstract class _$$NewsLoadingStateCopyWith<$Res> {
+  factory _$$NewsLoadingStateCopyWith(
+          _$NewsLoadingState value, $Res Function(_$NewsLoadingState) then) =
+      __$$NewsLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NewsLoadingStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$_NewsLoadingState>
-    implements _$$_NewsLoadingStateCopyWith<$Res> {
-  __$$_NewsLoadingStateCopyWithImpl(
-      _$_NewsLoadingState _value, $Res Function(_$_NewsLoadingState) _then)
+class __$$NewsLoadingStateCopyWithImpl<$Res>
+    extends _$NewsStateCopyWithImpl<$Res, _$NewsLoadingState>
+    implements _$$NewsLoadingStateCopyWith<$Res> {
+  __$$NewsLoadingStateCopyWithImpl(
+      _$NewsLoadingState _value, $Res Function(_$NewsLoadingState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NewsLoadingState implements _NewsLoadingState {
-  const _$_NewsLoadingState();
+class _$NewsLoadingState implements NewsLoadingState {
+  const _$NewsLoadingState();
 
   @override
   String toString() {
@@ -439,7 +439,7 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NewsLoadingState);
+        (other.runtimeType == runtimeType && other is _$NewsLoadingState);
   }
 
   @override
@@ -482,9 +482,9 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(NewsInitialState value) initial,
+    required TResult Function(NewsLoadingState value) loading,
+    required TResult Function(NewsLoadedState value) loaded,
   }) {
     return loading(this);
   }
@@ -492,9 +492,9 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(NewsInitialState value)? initial,
+    TResult? Function(NewsLoadingState value)? loading,
+    TResult? Function(NewsLoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -502,9 +502,9 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(NewsInitialState value)? initial,
+    TResult Function(NewsLoadingState value)? loading,
+    TResult Function(NewsLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -514,25 +514,25 @@ class _$_NewsLoadingState implements _NewsLoadingState {
   }
 }
 
-abstract class _NewsLoadingState implements NewsState {
-  const factory _NewsLoadingState() = _$_NewsLoadingState;
+abstract class NewsLoadingState implements NewsState {
+  const factory NewsLoadingState() = _$NewsLoadingState;
 }
 
 /// @nodoc
-abstract class _$$_NewsLoadedStateCopyWith<$Res> {
-  factory _$$_NewsLoadedStateCopyWith(
-          _$_NewsLoadedState value, $Res Function(_$_NewsLoadedState) then) =
-      __$$_NewsLoadedStateCopyWithImpl<$Res>;
+abstract class _$$NewsLoadedStateCopyWith<$Res> {
+  factory _$$NewsLoadedStateCopyWith(
+          _$NewsLoadedState value, $Res Function(_$NewsLoadedState) then) =
+      __$$NewsLoadedStateCopyWithImpl<$Res>;
   @useResult
   $Res call({NewsViewModel viewModel});
 }
 
 /// @nodoc
-class __$$_NewsLoadedStateCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$_NewsLoadedState>
-    implements _$$_NewsLoadedStateCopyWith<$Res> {
-  __$$_NewsLoadedStateCopyWithImpl(
-      _$_NewsLoadedState _value, $Res Function(_$_NewsLoadedState) _then)
+class __$$NewsLoadedStateCopyWithImpl<$Res>
+    extends _$NewsStateCopyWithImpl<$Res, _$NewsLoadedState>
+    implements _$$NewsLoadedStateCopyWith<$Res> {
+  __$$NewsLoadedStateCopyWithImpl(
+      _$NewsLoadedState _value, $Res Function(_$NewsLoadedState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -540,7 +540,7 @@ class __$$_NewsLoadedStateCopyWithImpl<$Res>
   $Res call({
     Object? viewModel = null,
   }) {
-    return _then(_$_NewsLoadedState(
+    return _then(_$NewsLoadedState(
       null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
@@ -551,8 +551,8 @@ class __$$_NewsLoadedStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NewsLoadedState implements _NewsLoadedState {
-  const _$_NewsLoadedState(this.viewModel);
+class _$NewsLoadedState implements NewsLoadedState {
+  const _$NewsLoadedState(this.viewModel);
 
   @override
   final NewsViewModel viewModel;
@@ -566,7 +566,7 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewsLoadedState &&
+            other is _$NewsLoadedState &&
             (identical(other.viewModel, viewModel) ||
                 other.viewModel == viewModel));
   }
@@ -577,8 +577,8 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewsLoadedStateCopyWith<_$_NewsLoadedState> get copyWith =>
-      __$$_NewsLoadedStateCopyWithImpl<_$_NewsLoadedState>(this, _$identity);
+  _$$NewsLoadedStateCopyWith<_$NewsLoadedState> get copyWith =>
+      __$$NewsLoadedStateCopyWithImpl<_$NewsLoadedState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -617,9 +617,9 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NewsInitialState value) initial,
-    required TResult Function(_NewsLoadingState value) loading,
-    required TResult Function(_NewsLoadedState value) loaded,
+    required TResult Function(NewsInitialState value) initial,
+    required TResult Function(NewsLoadingState value) loading,
+    required TResult Function(NewsLoadedState value) loaded,
   }) {
     return loaded(this);
   }
@@ -627,9 +627,9 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_NewsInitialState value)? initial,
-    TResult? Function(_NewsLoadingState value)? loading,
-    TResult? Function(_NewsLoadedState value)? loaded,
+    TResult? Function(NewsInitialState value)? initial,
+    TResult? Function(NewsLoadingState value)? loading,
+    TResult? Function(NewsLoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -637,9 +637,9 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NewsInitialState value)? initial,
-    TResult Function(_NewsLoadingState value)? loading,
-    TResult Function(_NewsLoadedState value)? loaded,
+    TResult Function(NewsInitialState value)? initial,
+    TResult Function(NewsLoadingState value)? loading,
+    TResult Function(NewsLoadedState value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -649,12 +649,12 @@ class _$_NewsLoadedState implements _NewsLoadedState {
   }
 }
 
-abstract class _NewsLoadedState implements NewsState {
-  const factory _NewsLoadedState(final NewsViewModel viewModel) =
-      _$_NewsLoadedState;
+abstract class NewsLoadedState implements NewsState {
+  const factory NewsLoadedState(final NewsViewModel viewModel) =
+      _$NewsLoadedState;
 
   NewsViewModel get viewModel;
   @JsonKey(ignore: true)
-  _$$_NewsLoadedStateCopyWith<_$_NewsLoadedState> get copyWith =>
+  _$$NewsLoadedStateCopyWith<_$NewsLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
 }

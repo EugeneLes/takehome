@@ -2,8 +2,8 @@ part of 'news_bloc.dart';
 
 @freezed
 class NewsState with _$NewsState {
-  const factory NewsState.initial() = _NewsInitialState;
-  const factory NewsState.loading() = _NewsLoadingState;
+  const factory NewsState.initial() = NewsInitialState;
+  const factory NewsState.loading() = NewsLoadingState;
 
-  const factory NewsState.loaded(NewsViewModel viewModel) = _NewsLoadedState;
+  const factory NewsState.loaded(NewsViewModel viewModel) = NewsLoadedState;
 }

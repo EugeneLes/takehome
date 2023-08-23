@@ -11,12 +11,8 @@ class FavoritesRepository {
 
   FavoritesRepository(this.storage);
 
-  // @PostConstruct(preResolve: true)
-  // Future<void> init() async {}
-
   Future<List<ArticleModel>> getFavorites() async {
     final result = await storage.getFavorites();
-    print('getTopHeadlines result: $result');
     return result.map((e) => e.toModel()).toList();
   }
 

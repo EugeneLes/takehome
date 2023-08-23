@@ -30,7 +30,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     on<_NewsLoadEvent>((event, emit) => _loadNews(event, emit));
   }
 
-  init(String source) {
+  void init(String source) {
     add(NewsEvent.load(source));
     favStream?.cancel();
     favStream = _watchFavoritesUC.call().listen((event) {

@@ -54,10 +54,6 @@ extension SourceX on SourceDTO {
       );
 }
 
-// extension NewsModelDtoX on TopHeadlinesDTO {
-//   NewsModel toModel() => NewsModel(articles.map((e) => e.toModel()).toList());
-// }
-
 extension ArticleDtoX on ArticleDTO {
   ArticleModel toModel({int? id, bool? isFavorite}) => ArticleModel(
       id: id,

@@ -5,12 +5,6 @@ part 'news_api.chopper.dart';
 
 const _apiKey = '97cb319c85f54b5a88f505a458b09537';
 
-// https://newsapi.org/v2/everything?q=bitcoin&from=2023-07-22&sortBy=publishedAt&apiKey=97cb319c85f54b5a88f505a458b09537
-// https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=97cb319c85f54b5a88f505a458b09537
-// https://newsapi.org/v2/everything?q=apple&from=2023-08-21&to=2023-08-21&sortBy=popularity&apiKey=97cb319c85f54b5a88f505a458b09537
-// https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=97cb319c85f54b5a88f505a458b09537
-// https://newsapi.org/v2/everything?domains=wsj.com&apiKey=97cb319c85f54b5a88f505a458b09537
-
 @ChopperApi()
 abstract class NewsApi extends ChopperService {
   static NewsApi create({

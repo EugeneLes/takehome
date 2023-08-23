@@ -15,14 +15,12 @@ class LocalStorage {
       isar = await Isar.open(
         [ArticleSchema],
         directory: dir.path,
-        inspector: true, //debug
       );
     }
   }
 
   Future<int?> isFavorite(String url) async {
     final result = await isar.articles.where().urlEqualTo(url).findFirst();
-    print('___ isFavorite($url), res: $result, return: ${result?.id} ');
     return result?.id;
   }
 
