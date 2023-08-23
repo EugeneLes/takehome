@@ -3,7 +3,18 @@ Simple News Client
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Project uses fvm to manage flutter version
+current version is 3.10.3
+you can use flutter version 3.10.3 
+or
+install fvm from here https://fvm.app/docs/getting_started/installation
+and run
+`fvm install` # Installs version found in project config
+
+then get all dependencies by running `fvm flutter pub get`
+ and then run app by running `fvm flutter run`
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
